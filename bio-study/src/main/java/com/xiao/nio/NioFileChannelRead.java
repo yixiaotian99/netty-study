@@ -10,7 +10,7 @@ import java.nio.channels.FileChannel;
  * @Date 2020-07-03 13:42
  * @Description 使用 FileChannel 读取文件
  **/
-public class NOIFileChannelRead {
+public class NioFileChannelRead {
 
 
     public static void main(String[] args) throws IOException {

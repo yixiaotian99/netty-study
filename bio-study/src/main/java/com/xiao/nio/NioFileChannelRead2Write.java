@@ -11,7 +11,7 @@ import java.nio.channels.FileChannel;
  * @Date 2020-07-03 13:50
  * @Description 使用 FileChannel 读取 01.txt 写入 02.txt
  **/
-public class NOIFileChannelRead2Write {
+public class NioFileChannelRead2Write {
 
 
     public static void main(String[] args) throws IOException {

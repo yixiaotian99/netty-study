@@ -10,7 +10,7 @@ import java.nio.channels.FileChannel;
  * @Date 2020-07-03 11:27
  * @Description 通过使用 NOI 中 FileChannel 写入文本
  **/
-public class NOIFileChannelWrite {
+public class NioFileChannelWrite {
 
 
     public static void main(String[] args) throws IOException {
