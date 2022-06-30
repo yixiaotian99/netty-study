@@ -37,7 +37,7 @@ public class HelloServer {
                                 ch.pipeline().addLast(new ChannelInboundHandlerAdapter() { //自定义handler
                                     @Override
                                     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-                                        System.out.println("输出:" + msg);
+                                        System.out.println("输出:" + msg + ",channelId:" + ctx.channel().id());
                                     }
                                 });
                             }

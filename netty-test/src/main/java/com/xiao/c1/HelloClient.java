@@ -1,10 +1,10 @@
 package com.xiao.c1;
 
 import io.netty.bootstrap.Bootstrap;
+import io.netty.channel.Channel;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
-import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
 
 import java.net.InetSocketAddress;
@@ -19,7 +19,7 @@ public class HelloClient {
 
     public static void main(String[] args) throws InterruptedException {
         //1.启动类
-        new Bootstrap()
+        Channel channel = new Bootstrap()
                 //2.增加 EventLoop 组
                 .group(new NioEventLoopGroup())
                 //3.选择客户端 channel 实现
@@ -36,9 +36,11 @@ public class HelloClient {
                 //5.连接到服务器
                 .connect(new InetSocketAddress("localhost", 8088))
                 .sync()
-                .channel()
+                .channel();
+
                 //6.向服务器发送数据
-                .writeAndFlush("hello world 你好世界");
+        channel.writeAndFlush("hello world 你好世界");
+        System.out.println("channelId:"+  channel.id());
 
     }
 }
